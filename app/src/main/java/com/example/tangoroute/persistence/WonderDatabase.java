@@ -6,11 +6,14 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+import com.example.tangoroute.utils.LocationConverter;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Database(entities = {WonderEntity.class}, version = 1, exportSchema = false)
+@TypeConverters({LocationConverter.class})
 public abstract class WonderDatabase extends RoomDatabase {
 
     public static final String DATABASE = WonderEntity.WONDERS + ".db";
@@ -39,21 +42,15 @@ public abstract class WonderDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    // Delete all content and repopulate the database whenever the app is started
-    private static RoomDatabase.Callback sRoomDatabaseCallback =
+     private static RoomDatabase.Callback sRoomDatabaseCallback =
             new RoomDatabase.Callback() {
 
                 @Override
                 public void onOpen(@NonNull SupportSQLiteDatabase db) {
                     super.onOpen(db);
-
-                    // If you want to keep data through app restarts,
-                    // comment out the following block
                     databaseWriteExecutor.execute(new Runnable() {
                         @Override
                         public void run() {
-                            // Populate the database in the background.
-                            // If you want to start with more groups, just add them.
                             WonderDAO dao = INSTANCE.wonderDAO();
                         }
                     });

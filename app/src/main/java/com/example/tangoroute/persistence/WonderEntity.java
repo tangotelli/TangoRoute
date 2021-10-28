@@ -16,6 +16,10 @@ public class WonderEntity {
     private Location location;
     private String description;
 
+    public WonderEntity() {
+        //empty from framework
+    }
+
     public WonderEntity(Wonder wonder) {
         this.name = wonder.getName();
         this.location = wonder.getLocation();

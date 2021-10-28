@@ -8,6 +8,12 @@ public class Location {
     private String country;
     private LatLng coordinates;
 
+    public Location(String city, String country, LatLng coordinates) {
+        this.city = city;
+        this.country = country;
+        this.coordinates = coordinates;
+    }
+
     public String getCity() {
         return city;
     }

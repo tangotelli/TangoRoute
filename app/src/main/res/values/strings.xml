@@ -1,10 +1,17 @@
 <resources>
-    <string name="app_name">TangoRoute</string>
-    <!-- Login Activity-->
+    <string name="app_name">Las Siete Maravillas</string>
+    <!-- Login Activity -->
     <string name="hint_email">Email</string>
     <string name="hint_password">Contraseña</string>
     <string name="login">Iniciar sesión</string>
     <string name="sign_up">Registrarse</string>
     <string name="required_field">Campo obligatorio</string>
     <string name="auth_failure">Error de autenticación: $</string>
+    <!-- Main Activity -->
+    <string name="main_title">Las Siete Maravillas</string>
+    <!-- Card holders -->
+    <string name="button_detail">Detalle</string>
+    <string name="image_view">Foto</string>
+    <!-- Menu -->
+    <string name="menu_help">Ayuda</string>
 </resources>

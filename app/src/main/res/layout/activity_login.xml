@@ -39,15 +39,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:gravity="center"
         android:layout_below="@id/etPassword"
         android:layout_marginTop="@dimen/form_margin"
         android:layout_marginHorizontal="@dimen/component_margin">
 
         <Button
             android:id="@+id/buttonLogin"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:padding="@dimen/button_padding"
             android:layout_margin="@dimen/button_margin"
@@ -56,8 +57,8 @@
 
         <Button
             android:id="@+id/buttonSignup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:padding="@dimen/button_padding"
             android:layout_margin="@dimen/button_margin"

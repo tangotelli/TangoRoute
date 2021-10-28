@@ -3,6 +3,7 @@ package com.example.tangoroute;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -36,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view) {
         if (this.areValidCredentials()) {
+            LoginActivity activity = this;
             AuthCredential credential = EmailAuthProvider
                     .getCredential(this.etEmail.getText().toString(), this.etPassword.getText().toString());
             firebaseAuth.signInWithCredential(credential)
@@ -43,12 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Snackbar.make(
-                                        findViewById(android.R.id.content),
-                                        "worked",
-                                        Snackbar.LENGTH_LONG
-                                )
-                                        .show();
+                                startActivity(new Intent(activity, MainActivity.class));
                             } else {
                                 String message = getString(R.string.auth_failure);
                                 message = message.replace("$", task.getException().getMessage());

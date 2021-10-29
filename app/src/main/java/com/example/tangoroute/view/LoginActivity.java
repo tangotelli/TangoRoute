@@ -1,4 +1,4 @@
-package com.example.tangoroute.activities;
+package com.example.tangoroute.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

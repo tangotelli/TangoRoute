@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TangoRoute">
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".view.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
         </activity>
     </application>

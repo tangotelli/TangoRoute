@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.example.tangoroute.models.Wonder;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class WonderRepository {
 
     private static WonderRepository repository;
@@ -27,5 +30,11 @@ public class WonderRepository {
 
     public Wonder findByName(String name) {
         return this.wonderDAO.findByName(name).toWonder();
+    }
+
+    public List<Wonder> findAll() {
+        return this.wonderDAO.findAll().stream()
+                .map(WonderEntity::toWonder)
+                .collect(Collectors.toList());
     }
 }

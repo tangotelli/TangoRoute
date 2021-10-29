@@ -1,5 +1,7 @@
 package com.example.tangoroute.utils;
 
+import android.util.Log;
+
 import androidx.room.TypeConverter;
 
 import com.example.tangoroute.models.Location;
@@ -7,7 +9,7 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class LocationConverter {
 
-    private static final String SPLIT_CHAR = "$";
+    private static final String SPLIT_CHAR = ";";
 
     @TypeConverter
     public static Location toLocation(String locationString) {

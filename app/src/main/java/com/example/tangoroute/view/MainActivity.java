@@ -2,13 +2,11 @@ package com.example.tangoroute.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-
 import com.example.tangoroute.R;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.WonderRepository;
@@ -22,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Wonder> wonders;
     private ListView listView;
     private ListAdapter listAdapter;
+
+    protected static final String WONDER_BUNDLE_CODE = "wonder";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

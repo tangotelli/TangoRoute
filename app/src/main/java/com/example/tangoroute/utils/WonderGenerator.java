@@ -2,10 +2,10 @@ package com.example.tangoroute.utils;
 
 import android.app.Application;
 
+import com.example.tangoroute.models.Coordinates;
 import com.example.tangoroute.models.Location;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.WonderRepository;
-import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ public class WonderGenerator {
     public static void insertAll(Application application) {
         List<Wonder> wonders = new ArrayList<>();
         //CHICHEN ITZA
-        LatLng coordinates = new LatLng(20.6842849, -88.5677826);
+        Coordinates coordinates = new Coordinates(20.6842849, -88.5677826);
         wonders.add(Wonder.builder()
                 .name("Chichén Itza")
                 .location(new Location("Chichén Itza", "Mexico", coordinates))
@@ -30,7 +30,7 @@ public class WonderGenerator {
                         "ha hecho que en 1988 fuese declarado patrimonio de la humanidad por la UNESCO.")
                 .build());
         //EL COLISEO
-        coordinates = new LatLng(41.8902102, 12.4922309);
+        coordinates = new Coordinates(41.8902102, 12.4922309);
         wonders.add(Wonder.builder()
                 .name("El Coliseo")
                 .location(new Location("Roma", "Italia", coordinates))
@@ -46,7 +46,7 @@ public class WonderGenerator {
                         "maravillas del mundo de Europa.")
                 .build());
         //EL CRISTO REDENTOR
-        coordinates = new LatLng(-22.951916, -43.2104872);
+        coordinates = new Coordinates(-22.951916, -43.2104872);
         wonders.add(Wonder.builder()
                 .name("Cristo Redentor")
                 .location(new Location("Río de Janeiro", "Brasil", coordinates))
@@ -61,7 +61,7 @@ public class WonderGenerator {
                         "único monumento de las 7 maravillas considerado Art Decó.")
                 .build());
         //LA GRAN MURALLA
-        coordinates = new LatLng(40.4319077, 116.5703749);
+        coordinates = new Coordinates(40.4319077, 116.5703749);
         wonders.add(Wonder.builder()
                 .name("Gran Muralla China")
                 .location(new Location("", "China", coordinates))
@@ -75,7 +75,7 @@ public class WonderGenerator {
                         "de la humanidad.")
                 .build());
         //MACHU PICCHU
-        coordinates = new LatLng(-13.1631412, -72.5449629);
+        coordinates = new Coordinates(-13.1631412, -72.5449629);
         wonders.add(Wonder.builder()
                 .name("Machu Picchu")
                 .location(new Location("Machu Picchu", "Perú", coordinates))
@@ -88,7 +88,7 @@ public class WonderGenerator {
                         "de las 7 Maravillas del mundo.")
                 .build());
         //PETRA
-        coordinates = new LatLng(30.3284544, 35.4443622);
+        coordinates = new Coordinates(30.3284544, 35.4443622);
         wonders.add(Wonder.builder()
                 .name("Petra")
                 .location(new Location("Petra", "Jordania", coordinates))
@@ -104,7 +104,7 @@ public class WonderGenerator {
                         "humanidad en 1985.")
                 .build());
         //TAJ MAHAL
-        coordinates = new LatLng(27.1750151, 78.0421552);
+        coordinates = new Coordinates(27.1750151, 78.0421552);
         wonders.add(Wonder.builder()
                 .name("Taj Mahal")
                 .location(new Location("Agra", "India", coordinates))

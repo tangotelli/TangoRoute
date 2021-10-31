@@ -9,6 +9,10 @@
     <string name="auth_failure">Error de autenticación: $</string>
     <!-- Main Activity -->
     <string name="main_title">Las Siete Maravillas</string>
+    <!-- Detail Activity -->
+    <string name="button_quiz">Cuestionario</string>
+    <string name="button_travel">Viajar</string>
+    <string name="loading_map">Cargando mapa</string>
     <!-- Card holders -->
     <string name="button_detail">Detalle</string>
     <string name="image_view">Foto</string>

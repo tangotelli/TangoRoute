@@ -1,14 +1,14 @@
 package com.example.tangoroute.models;
 
-import com.google.android.gms.maps.model.LatLng;
+import java.io.Serializable;
 
-public class Location {
+public class Location implements Serializable {
 
     private String city;
     private String country;
-    private LatLng coordinates;
+    private Coordinates coordinates;
 
-    public Location(String city, String country, LatLng coordinates) {
+    public Location(String city, String country, Coordinates coordinates) {
         this.city = city;
         this.country = country;
         this.coordinates = coordinates;
@@ -30,11 +30,11 @@ public class Location {
         this.country = country;
     }
 
-    public LatLng getCoordinates() {
+    public Coordinates getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(LatLng coordinates) {
+    public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
@@ -43,8 +43,7 @@ public class Location {
         return "Location{" +
                 "city='" + city + '\'' +
                 ", country='" + country + '\'' +
-                ", latitude=" + coordinates.latitude +
-                ", longitude=" + coordinates.longitude +
+                ", coordinates=" + coordinates.toString() +
                 '}';
     }
 }

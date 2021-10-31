@@ -1,6 +1,8 @@
 package com.example.tangoroute.models;
 
-public class Wonder {
+import java.io.Serializable;
+
+public class Wonder implements Serializable {
 
     private String name;
     private Location location;

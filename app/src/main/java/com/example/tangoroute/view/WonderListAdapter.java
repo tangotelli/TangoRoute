@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tangoroute.R;
-import com.example.tangoroute.models.Location;
+import com.example.tangoroute.models.Situation;
 import com.example.tangoroute.models.Wonder;
 
 import java.util.List;
@@ -50,7 +50,7 @@ public class WonderListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         WonderCardHolder holder = new WonderCardHolder();
-        View view = this.inflater.inflate(R.layout.card_view_item, null);
+        View view = this.inflater.inflate(R.layout.wonder_card_view_item, null);
         holder.imageViewItem = view.findViewById(R.id.imageViewItem);
         // TO-DO poner imagenes
         setTexts(view, holder, position);
@@ -65,9 +65,9 @@ public class WonderListAdapter extends BaseAdapter {
     private void setTexts(View view, WonderCardHolder holder, int position) {
         holder.tvItemName = view.findViewById(R.id.tvItemName);
         holder.tvItemName.setText(this.wonders.get(position).getName());
-        Location location = this.wonders.get(position).getLocation();
-        String generalDataText = location.getCity() + "(" + location.getCountry() + ")\n"
-                + location.getCoordinates().toString();
+        Situation situation = this.wonders.get(position).getSituation();
+        String generalDataText = situation.getCity() + "(" + situation.getCountry() + ")\n"
+                + situation.getCoordinates().toString();
         holder.tvItemGeneralData = view.findViewById(R.id.tvItemGeneralData);
         holder.tvItemGeneralData.setText(generalDataText);
     }

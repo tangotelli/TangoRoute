@@ -13,9 +13,14 @@
     <string name="button_quiz">Cuestionario</string>
     <string name="button_travel">Viajar</string>
     <string name="loading_map">Cargando mapa</string>
+    <!-- Airport Activity -->
+    <string name="airport_title">Aeropuertos cercanos</string>
     <!-- Card holders -->
     <string name="button_detail">Detalle</string>
     <string name="image_view">Foto</string>
+    <string name="iata_code">IATA:</string>
+    <string name="icao_code">ICAO:</string>
+    <string name="distance_to_wonder">Distance to $:</string>
     <!-- Menu -->
     <string name="menu_help">Ayuda</string>
 </resources>

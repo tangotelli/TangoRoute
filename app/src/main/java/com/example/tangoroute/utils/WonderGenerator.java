@@ -3,7 +3,7 @@ package com.example.tangoroute.utils;
 import android.app.Application;
 
 import com.example.tangoroute.models.Coordinates;
-import com.example.tangoroute.models.Location;
+import com.example.tangoroute.models.Situation;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.WonderRepository;
 
@@ -18,7 +18,7 @@ public class WonderGenerator {
         Coordinates coordinates = new Coordinates(20.6842849, -88.5677826);
         wonders.add(Wonder.builder()
                 .name("Chichén Itza")
-                .location(new Location("Chichén Itza", "Mexico", coordinates))
+                .situation(new Situation("Chichén Itza", "Mexico", coordinates))
                 .description("Esta antigua ciudad maya es uno de los centros arqueológicos " +
                         "más importantes de la península de Yucatán, en México. Su nombre en maya " +
                         "significa 'Boca del pozo de los itzaes', ya que hace referencia al cenote " +
@@ -33,7 +33,7 @@ public class WonderGenerator {
         coordinates = new Coordinates(41.8902102, 12.4922309);
         wonders.add(Wonder.builder()
                 .name("El Coliseo")
-                .location(new Location("Roma", "Italia", coordinates))
+                .situation(new Situation("Roma", "Italia", coordinates))
                 .description("Este anfiteatro es uno de los tesoros que el Imperio romano ha dejado " +
                         "como herencia a la Ciudad Eterna. También fue el más grande jamás construido. " +
                         "Su nombre original era anfiteatro Flavio, ya que fue levantado en el I d.C " +
@@ -49,7 +49,7 @@ public class WonderGenerator {
         coordinates = new Coordinates(-22.951916, -43.2104872);
         wonders.add(Wonder.builder()
                 .name("Cristo Redentor")
-                .location(new Location("Río de Janeiro", "Brasil", coordinates))
+                .situation(new Situation("Río de Janeiro", "Brasil", coordinates))
                 .description("El Cristo Redentor es una de las estatuas más famosas del mundo, " +
                         "y también una de las más grandes. Con sus 30 metros de altitud, " +
                         "Jesús de Nazaret acoge con los brazos abiertos la ciudad brasileña de " +
@@ -64,7 +64,7 @@ public class WonderGenerator {
         coordinates = new Coordinates(40.4319077, 116.5703749);
         wonders.add(Wonder.builder()
                 .name("Gran Muralla China")
-                .location(new Location("", "China", coordinates))
+                .situation(new Situation("", "China", coordinates))
                 .description("Es la obra arquitectónica más importante de China, una antigua fortaleza " +
                         "que a los chinos les sirvió como defensa ante los posibles ataques mongoles. " +
                         "En sus orígenes llegó a medir más de 21 mil kilómetros a lo largo del sur " +
@@ -78,7 +78,7 @@ public class WonderGenerator {
         coordinates = new Coordinates(-13.1631412, -72.5449629);
         wonders.add(Wonder.builder()
                 .name("Machu Picchu")
-                .location(new Location("Machu Picchu", "Perú", coordinates))
+                .situation(new Situation("Machu Picchu", "Perú", coordinates))
                 .description("Una de las joyas andinas mejor conservadas del imperio inca. Data del " +
                         "siglo XV y se cree que sirvió como antiguo santuario y como residencia del " +
                         "soberano del imperio. Fue levantada sobre un premonitorio rocoso, entre las " +
@@ -91,7 +91,7 @@ public class WonderGenerator {
         coordinates = new Coordinates(30.3284544, 35.4443622);
         wonders.add(Wonder.builder()
                 .name("Petra")
-                .location(new Location("Petra", "Jordania", coordinates))
+                .situation(new Situation("Petra", "Jordania", coordinates))
                 .description("La capital del antiguo reino nabateo está esculpida sobre la roca. " +
                         "Es uno de los enclaves arqueológicos más importantes de Jordania, y uno de " +
                         "los más visitados del país. Fue fundada en el siglo VIII a.C y era una de " +
@@ -107,7 +107,7 @@ public class WonderGenerator {
         coordinates = new Coordinates(27.1750151, 78.0421552);
         wonders.add(Wonder.builder()
                 .name("Taj Mahal")
-                .location(new Location("Agra", "India", coordinates))
+                .situation(new Situation("Agra", "India", coordinates))
                 .description("El Taj Mahal es, posiblemente, uno de los edificios más románticos del " +
                         "mundo. Fue construido a mediados del siglo XVII por el emperador Shah Jahan " +
                         "como mausoleo para enterrar a su difunta esposa, Arjumand Bano Begum, " +

@@ -1,5 +1,7 @@
 package com.example.tangoroute.models;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.Serializable;
 
 public class Coordinates implements Serializable {
@@ -33,5 +35,9 @@ public class Coordinates implements Serializable {
         return "(" + latitude +
                 ", " + longitude +
                 ')';
+    }
+
+    public LatLng toLatLng() {
+        return new LatLng(this.latitude, this.longitude);
     }
 }

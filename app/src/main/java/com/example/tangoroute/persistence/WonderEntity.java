@@ -2,7 +2,7 @@ package com.example.tangoroute.persistence;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import com.example.tangoroute.models.Location;
+import com.example.tangoroute.models.Situation;
 import com.example.tangoroute.models.Wonder;
 
 @Entity(tableName = WonderEntity.WONDERS)
@@ -13,7 +13,7 @@ public class WonderEntity {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String name;
-    private Location location;
+    private Situation situation;
     private String description;
 
     public WonderEntity() {
@@ -22,14 +22,14 @@ public class WonderEntity {
 
     public WonderEntity(Wonder wonder) {
         this.name = wonder.getName();
-        this.location = wonder.getLocation();
+        this.situation = wonder.getSituation();
         this.description = wonder.getDescription();
     }
 
     public Wonder toWonder() {
         return Wonder.builder()
                 .name(this.name)
-                .location(this.location)
+                .situation(this.situation)
                 .description(this.description)
                 .build();
     }
@@ -50,12 +50,12 @@ public class WonderEntity {
         this.name = name;
     }
 
-    public Location getLocation() {
-        return location;
+    public Situation getSituation() {
+        return situation;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setSituation(Situation situation) {
+        this.situation = situation;
     }
 
     public String getDescription() {

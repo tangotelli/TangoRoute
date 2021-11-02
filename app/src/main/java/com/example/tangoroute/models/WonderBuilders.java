@@ -7,7 +7,7 @@ public interface WonderBuilders {
     }
 
     interface WonderLocation {
-        WonderBuilders.Optional location(Location location);
+        WonderBuilders.Optional situation(Situation situation);
     }
 
     interface Optional {

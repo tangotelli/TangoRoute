@@ -55,8 +55,8 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
     }
 
     private void setMap() {
-        LatLng latLng = new LatLng(this.wonder.getLocation().getCoordinates().getLatitude(),
-                this.wonder.getLocation().getCoordinates().getLongitude());
+        LatLng latLng = new LatLng(this.wonder.getSituation().getCoordinates().getLatitude(),
+                this.wonder.getSituation().getCoordinates().getLongitude());
         Marker marker = this.map.addMarker(new MarkerOptions().position(latLng));
         marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
         this.map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, STREETS_ZOOM_LEVEL));

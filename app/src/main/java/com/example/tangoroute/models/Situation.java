@@ -2,13 +2,13 @@ package com.example.tangoroute.models;
 
 import java.io.Serializable;
 
-public class Location implements Serializable {
+public class Situation implements Serializable {
 
     private String city;
     private String country;
     private Coordinates coordinates;
 
-    public Location(String city, String country, Coordinates coordinates) {
+    public Situation(String city, String country, Coordinates coordinates) {
         this.city = city;
         this.country = country;
         this.coordinates = coordinates;

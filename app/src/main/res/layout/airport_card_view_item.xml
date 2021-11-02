@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/airport_card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/card_view_height"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_view_margin"
+        card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+        card_view:contentPadding="@dimen/card_view_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tvItemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="15sp"
+                    android:layout_marginStart="@dimen/card_view_margin"
+                    android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvItemCity"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textSize="15sp"
+                android:layout_marginStart="@dimen/card_view_margin"
+                android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tvItemIata"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="15sp"
+                android:layout_marginStart="@dimen/card_view_margin"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvItemIcao"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textSize="15sp"
+                android:layout_marginStart="@dimen/card_view_margin"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvItemLocation"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textSize="15sp"
+                android:layout_marginStart="@dimen/card_view_margin"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvItemDistance"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textSize="15sp"
+                android:layout_marginStart="@dimen/card_view_margin"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

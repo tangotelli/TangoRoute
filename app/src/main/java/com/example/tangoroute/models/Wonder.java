@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Wonder implements Serializable {
 
     private String name;
-    private Location location;
+    private Situation situation;
     private String description;
 
     public static WonderBuilders.Name builder() {
@@ -20,12 +20,12 @@ public class Wonder implements Serializable {
         this.name = name;
     }
 
-    public Location getLocation() {
-        return location;
+    public Situation getSituation() {
+        return situation;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setSituation(Situation situation) {
+        this.situation = situation;
     }
 
     public String getDescription() {
@@ -40,7 +40,7 @@ public class Wonder implements Serializable {
     public String toString() {
         return "Wonder{" +
                 "name='" + name + '\'' +
-                ", " + location.toString() +
+                ", " + situation.toString() +
                 '}';
     }
 
@@ -60,8 +60,8 @@ public class Wonder implements Serializable {
         }
 
         @Override
-        public WonderBuilders.Optional location(Location location) {
-            this.wonder.setLocation(location);
+        public WonderBuilders.Optional situation(Situation situation) {
+            this.wonder.setSituation(situation);
             return this;
         }
 

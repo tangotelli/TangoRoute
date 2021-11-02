@@ -1,19 +1,16 @@
 package com.example.tangoroute.utils;
 
-import android.util.Log;
-
 import androidx.room.TypeConverter;
 
 import com.example.tangoroute.models.Coordinates;
-import com.example.tangoroute.models.Location;
-import com.google.android.gms.maps.model.LatLng;
+import com.example.tangoroute.models.Situation;
 
 public class LocationConverter {
 
     private static final String SPLIT_CHAR = ";";
 
     @TypeConverter
-    public static Location toLocation(String locationString) {
+    public static Situation toLocation(String locationString) {
         if (locationString == null) {
             return null;
         } else {
@@ -22,27 +19,27 @@ public class LocationConverter {
     }
 
     @TypeConverter
-    public static String toLocationString(Location location) {
-        if (location == null) {
+    public static String toLocationString(Situation situation) {
+        if (situation == null) {
             return null;
         } else {
-            return serialize(location);
+            return serialize(situation);
         }
     }
 
-    private static String serialize(Location location) {
-        String serialized = location.getCity() + SPLIT_CHAR;
-        serialized += location.getCountry() + SPLIT_CHAR;
-        serialized += location.getCoordinates().getLatitude() + SPLIT_CHAR;
-        serialized += location.getCoordinates().getLongitude() + SPLIT_CHAR;
+    private static String serialize(Situation situation) {
+        String serialized = situation.getCity() + SPLIT_CHAR;
+        serialized += situation.getCountry() + SPLIT_CHAR;
+        serialized += situation.getCoordinates().getLatitude() + SPLIT_CHAR;
+        serialized += situation.getCoordinates().getLongitude() + SPLIT_CHAR;
         return serialized;
     }
 
-    private static Location deserialize(String locationString) {
+    private static Situation deserialize(String locationString) {
         String[] deserializedParts = locationString.split(SPLIT_CHAR);
         Coordinates coordinates = new Coordinates(Double.parseDouble(deserializedParts[2]),
                 Double.parseDouble(deserializedParts[3]));
-        return new Location(deserializedParts[0],
+        return new Situation(deserializedParts[0],
                 deserializedParts[1],
                 coordinates);
     }

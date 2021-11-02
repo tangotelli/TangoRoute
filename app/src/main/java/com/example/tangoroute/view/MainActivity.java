@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.repository = WonderRepository.getInstance(getApplication());
         this.wonders = this.repository.findAll();
-        listView = (ListView) findViewById(R.id.list);
+        listView = (ListView) findViewById(R.id.listMain);
         listAdapter = new WonderListAdapter(this.wonders, this.getResources(), this);
         listView.setAdapter(listAdapter);
     }

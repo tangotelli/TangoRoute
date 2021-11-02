@@ -13,7 +13,7 @@ public interface AirportAPIService {
             "x-rapidapi-host: aerodatabox.p.rapidapi.com",
             "x-rapidapi-key: c80a273ebcmsh1037adddc01d6c8p157babjsn0955b373c467"
     })
-    @GET("/airports/search/location/{latitude}/{longitude}/km/100/10")
+    @GET("/airports/search/location/{latitude}/{longitude}/km/100/5")
     Call<AirportList> getClosestAirports(@Path("latitude") double latitude,
                                          @Path("longitude") double longitude);
 }

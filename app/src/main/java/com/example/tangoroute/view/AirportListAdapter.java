@@ -46,7 +46,7 @@ public class AirportListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         AirportCardHolder holder = new AirportCardHolder();
-        View view = this.inflater.inflate(R.layout.wonder_card_view_item, null);
+        View view = this.inflater.inflate(R.layout.airport_card_view_item, null);
         setTexts(view, holder, position);
         return view;
     }
@@ -60,14 +60,14 @@ public class AirportListAdapter extends BaseAdapter {
         holder.tvItemCity.setText(items.get(position).getMunicipalityName());
         holder.tvItemIata = view.findViewById(R.id.tvItemIata);
         holder.tvItemIata.setText(this.resources.getString(R.string.iata_code)
-                + " " + items.get(position).getName());
+                + " " + items.get(position).getIata());
         holder.tvItemIcao = view.findViewById(R.id.tvItemIcao);
         holder.tvItemIcao.setText(this.resources.getString(R.string.icao_code)
-                + " " + items.get(position).getName());
+                + " " + items.get(position).getIcao());
         holder.tvItemLocation = view.findViewById(R.id.tvItemLocation);
         holder.tvItemLocation.setText(items.get(position).getLocation().getLat()
-                + ", " + items.get(position).getLocation().getLat());
-        holder.tvItemDistance = view.findViewById(R.id.tvItemName);
+                + ", " + items.get(position).getLocation().getLon());
+        holder.tvItemDistance = view.findViewById(R.id.tvItemDistance);
         holder.tvItemDistance
                 .setText(activity.getDistanceToWonder(items.get(position).getLocation()));
     }

@@ -80,7 +80,7 @@ public class AirportActivity extends AppCompatActivity {
     }
 
     private void fillAirportsList() {
-        this.listView = (ListView) findViewById(R.id.listMain);
+        this.listView = (ListView) findViewById(R.id.listAirport);
         this.listAdapter = new AirportListAdapter(this.airports, this.getResources(), this);
         this.listView.setAdapter(listAdapter);
     }
@@ -90,6 +90,8 @@ public class AirportActivity extends AppCompatActivity {
         float[] results = new float[1];
         android.location.Location.distanceBetween(airportLocation.getLat(), airportLocation.getLon(),
                 wonderLatLng.latitude, wonderLatLng.longitude, results);
-        return String.valueOf(results[0] / 1000);
+        float distance = results[0] / 1000;
+        return getString(R.string.distance_to_wonder)
+                .replace("$", this.wonder.getName()) + String.format("%.2f", distance) + " km";
     }
 }

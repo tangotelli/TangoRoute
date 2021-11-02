@@ -3,7 +3,9 @@ package com.example.tangoroute.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.tangoroute.R;
@@ -60,5 +62,11 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         Marker marker = this.map.addMarker(new MarkerOptions().position(latLng));
         marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
         this.map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, STREETS_ZOOM_LEVEL));
+    }
+
+    public void showClosestAirports(View view) {
+        Intent intent = new Intent(this, AirportActivity.class);
+        intent.putExtra(MainActivity.WONDER_BUNDLE_CODE, this.wonder);
+        startActivity(intent);
     }
 }

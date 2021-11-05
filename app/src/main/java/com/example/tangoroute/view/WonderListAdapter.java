@@ -3,6 +3,10 @@ package com.example.tangoroute.view;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +14,8 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.content.res.AppCompatResources;
 
 import com.example.tangoroute.R;
 import com.example.tangoroute.models.Situation;
@@ -52,7 +58,8 @@ public class WonderListAdapter extends BaseAdapter {
         WonderCardHolder holder = new WonderCardHolder();
         View view = this.inflater.inflate(R.layout.wonder_card_view_item, null);
         holder.imageViewItem = view.findViewById(R.id.imageViewItem);
-        // TO-DO poner imagenes
+        holder.imageViewItem.setImageDrawable(AppCompatResources
+                .getDrawable(this.context, this.wonders.get(position).getImageId()));
         setTexts(view, holder, position);
         setButton(view, holder, position);
         view.setOnClickListener(v -> {

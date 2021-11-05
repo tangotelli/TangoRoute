@@ -7,6 +7,7 @@ public class Wonder implements Serializable {
     private String name;
     private Situation situation;
     private String description;
+    private int imageId;
 
     public static WonderBuilders.Name builder() {
         return new WonderBuilder();
@@ -34,6 +35,14 @@ public class Wonder implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 
     @Override
@@ -68,6 +77,12 @@ public class Wonder implements Serializable {
         @Override
         public WonderBuilders.Optional description(String description) {
             this.wonder.setDescription(description);
+            return this;
+        }
+
+        @Override
+        public WonderBuilders.Optional imageId(int imageId) {
+            this.wonder.setImageId(imageId);
             return this;
         }
 

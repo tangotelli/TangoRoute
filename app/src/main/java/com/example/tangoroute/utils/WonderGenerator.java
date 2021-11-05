@@ -1,12 +1,13 @@
 package com.example.tangoroute.utils;
 
 import android.app.Application;
+import android.util.Log;
 
+import com.example.tangoroute.R;
 import com.example.tangoroute.models.Coordinates;
 import com.example.tangoroute.models.Situation;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.WonderRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class WonderGenerator {
                         "dios Kukulcán, una de las fortalezas mejor conservadas del lugar e imagen " +
                         "de las postales de la zona. La belleza y el valor histórico de Chichén Itza " +
                         "ha hecho que en 1988 fuese declarado patrimonio de la humanidad por la UNESCO.")
+                .imageId(R.drawable.chichen_itza)
                 .build());
         //EL COLISEO
         coordinates = new Coordinates(41.8902102, 12.4922309);
@@ -44,6 +46,7 @@ public class WonderGenerator {
                         "desperfectos tras varios terremotos, hoy en día el Coliseo sigue siendo el " +
                         "monumento más importante de Roma, y único punto de la lista de las 7 " +
                         "maravillas del mundo de Europa.")
+                .imageId(R.drawable.coliseo)
                 .build());
         //EL CRISTO REDENTOR
         coordinates = new Coordinates(-22.951916, -43.2104872);
@@ -59,6 +62,7 @@ public class WonderGenerator {
                         "de cinco años en construirla. Hoy en día es un emblema de Brasil, lugar de " +
                         "peregrinación e icono de los artistas brasileños, puesto que este es el " +
                         "único monumento de las 7 maravillas considerado Art Decó.")
+                .imageId(R.drawable.cristo_redentor)
                 .build());
         //LA GRAN MURALLA
         coordinates = new Coordinates(40.4319077, 116.5703749);
@@ -73,6 +77,7 @@ public class WonderGenerator {
                         "enterrados en sus inmediaciones, por lo que esta gran muralla está considerada " +
                         "como el mayor cementerio del mundo. En 1987 fue declarada como patrimonio " +
                         "de la humanidad.")
+                .imageId(R.drawable.la_gran_muralla)
                 .build());
         //MACHU PICCHU
         coordinates = new Coordinates(-13.1631412, -72.5449629);
@@ -86,6 +91,7 @@ public class WonderGenerator {
                         "nivel del mar. Su latitud, de hecho, hace que muchos viajeros sufran el mal " +
                         "de altura según van ascendiendo desde Cuzco para visitar la más emblemática " +
                         "de las 7 Maravillas del mundo.")
+                .imageId(R.drawable.machu_picchu)
                 .build());
         //PETRA
         coordinates = new Coordinates(30.3284544, 35.4443622);
@@ -102,6 +108,7 @@ public class WonderGenerator {
                         "construcción que te encuentras al adentrarte en el desfiladero de 1,5 km de " +
                         "largo. Toda la ciudad escondida de Petra fue declarada patrimonio de la " +
                         "humanidad en 1985.")
+                .imageId(R.drawable.petra)
                 .build());
         //TAJ MAHAL
         coordinates = new Coordinates(27.1750151, 78.0421552);
@@ -118,9 +125,11 @@ public class WonderGenerator {
                         "cuando el Taj Mahal estuvo finalizado se ordenó cortar las manos de todos " +
                         "los obreros que trabajaron en él. Se quería evitar que nunca más pudiesen " +
                         "construir un edificio de tal belleza. Desde 1983 es patrimonio de la humanidad.")
+                .imageId(R.drawable.taj_mahal)
                 .build());
         for (Wonder wonder : wonders) {
             WonderRepository.getInstance(application).insert(wonder);
         }
+        Log.i("TiW", "Success");
     }
 }

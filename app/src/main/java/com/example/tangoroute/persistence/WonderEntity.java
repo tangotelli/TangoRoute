@@ -15,6 +15,7 @@ public class WonderEntity {
     private String name;
     private Situation situation;
     private String description;
+    private int imageId;
 
     public WonderEntity() {
         //empty from framework
@@ -24,6 +25,7 @@ public class WonderEntity {
         this.name = wonder.getName();
         this.situation = wonder.getSituation();
         this.description = wonder.getDescription();
+        this.imageId = wonder.getImageId();
     }
 
     public Wonder toWonder() {
@@ -31,6 +33,7 @@ public class WonderEntity {
                 .name(this.name)
                 .situation(this.situation)
                 .description(this.description)
+                .imageId(this.imageId)
                 .build();
     }
 
@@ -64,5 +67,13 @@ public class WonderEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
     }
 }

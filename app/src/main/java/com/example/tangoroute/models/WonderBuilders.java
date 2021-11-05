@@ -13,6 +13,8 @@ public interface WonderBuilders {
     interface Optional {
         WonderBuilders.Optional description(String description);
 
+        WonderBuilders.Optional imageId(int imageId);
+
         Wonder build();
     }
 }

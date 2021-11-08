@@ -37,4 +37,8 @@ public class WonderRepository {
                 .map(WonderEntity::toWonder)
                 .collect(Collectors.toList());
     }
+
+    public void deleteAll() {
+        this.wonderDAO.deleteAll();
+    }
 }

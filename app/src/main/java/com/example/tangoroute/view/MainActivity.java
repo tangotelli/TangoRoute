@@ -42,8 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menuItemDatabase:
+                WonderGenerator.insertAll(getApplication());
+                this.wonders = this.repository.findAll();
+                listAdapter = new WonderListAdapter(this.wonders, this.getResources(), this);
+                listView.setAdapter(listAdapter);
+                return true;
             case R.id.menuItemHelp:
-                WonderGenerator.insertAll(getApplication()); //para la primera metida de datos, luego borralo
                 return true;
             default:
                 return true;

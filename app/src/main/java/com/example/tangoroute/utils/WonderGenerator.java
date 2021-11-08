@@ -14,6 +14,7 @@ import java.util.List;
 public class WonderGenerator {
 
     public static void insertAll(Application application) {
+        WonderRepository.getInstance(application).deleteAll();
         List<Wonder> wonders = new ArrayList<>();
         //CHICHEN ITZA
         Coordinates coordinates = new Coordinates(20.6842849, -88.5677826);

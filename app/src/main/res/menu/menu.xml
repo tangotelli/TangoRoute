@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menuItemDatabase"
+        android:title="@string/menu_database"
+        android:orderInCategory="1"
+        />
+
+    <item
         android:id="@+id/menuItemHelp"
         android:title="@string/menu_help"
         android:icon="@android:drawable/ic_menu_help"

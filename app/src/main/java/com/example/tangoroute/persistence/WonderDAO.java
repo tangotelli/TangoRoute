@@ -19,4 +19,7 @@ public interface WonderDAO {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     long insert(WonderEntity wonderEntity);
+
+    @Query("DELETE FROM " + WonderEntity.WONDERS)
+    void deleteAll();
 }

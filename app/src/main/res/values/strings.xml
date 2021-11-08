@@ -24,4 +24,19 @@
     <!-- Menu -->
     <string name="menu_help">Ayuda</string>
     <string name="menu_database">Cargar datos en Room</string>
+    <!-- Dialog -->
+    <string name="dialog_close">Cerrar</string>
+    <!-- Help text -->
+    <string name="help_title">¡Descubre la ruta por las Siete Maravillas del mundo moderno!</string>
+    <string name="help_text">
+        Esta es la lista por excelencia que todo viajero empedernido quiere completar a lo largo de su vida.
+        Un conjunto de monumentos histórico-artísticos que han sido elegidos por ciudadanos de todo el
+        mundo el pasado 2007 y que suponen un referente en el mundo de los viajes.
+        Para comenzar a utilizar la aplicación, cargue en Room la información de las maravillas a través
+        de la opción presente en el menú. Seleccionando cualquiera de las maravillas, podrás ver más
+        información acerca de cada una de ellas. Con el botón "Viajar" podrás ver los aeropuertos más
+        cercanos a cada una de las maravillas. Finalmente, mediante el botón "Cuestionario" podrás responder
+        una serie de preguntas acerca de cada uno de estos monumentos. ¡Acierta todas las que puedas en el
+        menor tiempo para ganar puntos y liderar la tabla de jugadores!
+    </string>
 </resources>

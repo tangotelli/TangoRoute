@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import com.example.tangoroute.R;
+import com.example.tangoroute.dialogs.HelpDialog;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.WonderRepository;
 import com.example.tangoroute.utils.WonderGenerator;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 listView.setAdapter(listAdapter);
                 return true;
             case R.id.menuItemHelp:
+                new HelpDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
                 return true;
             default:
                 return true;

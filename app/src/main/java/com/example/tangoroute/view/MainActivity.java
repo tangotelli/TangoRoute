@@ -10,14 +10,17 @@ import android.widget.ListView;
 import com.example.tangoroute.R;
 import com.example.tangoroute.dialogs.HelpDialog;
 import com.example.tangoroute.models.Wonder;
+import com.example.tangoroute.persistence.QuestionRepository;
 import com.example.tangoroute.persistence.WonderRepository;
+import com.example.tangoroute.utils.QuestionGenerator;
 import com.example.tangoroute.utils.WonderGenerator;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private WonderRepository repository;
+    private WonderRepository wonderRepository;
+    private QuestionRepository questionRepository;
     private List<Wonder> wonders;
     private ListView listView;
     private ListAdapter listAdapter;
@@ -28,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.repository = WonderRepository.getInstance(getApplication());
-        this.wonders = this.repository.findAll();
+        this.wonderRepository = WonderRepository.getInstance(getApplication());
+        this.questionRepository = QuestionRepository.getInstance(getApplication());
+        this.wonders = this.wonderRepository.findAll();
         listView = (ListView) findViewById(R.id.listMain);
         listAdapter = new WonderListAdapter(this.wonders, this.getResources(), this);
         listView.setAdapter(listAdapter);
@@ -45,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menuItemDatabase:
                 WonderGenerator.insertAll(getApplication());
-                this.wonders = this.repository.findAll();
+                QuestionGenerator.insertAll(getApplication());
+                this.wonders = this.wonderRepository.findAll();
                 listAdapter = new WonderListAdapter(this.wonders, this.getResources(), this);
                 listView.setAdapter(listAdapter);
                 return true;

@@ -15,6 +15,15 @@
     <string name="loading_map">Cargando mapa</string>
     <!-- Airport Activity -->
     <string name="airport_title">Aeropuertos cercanos</string>
+    <!-- Quiz Activity -->
+    <string name="button_answer">Responder</string>
+    <string name="answer_invalid">Elija una de las opciones antes de responder</string>
+    <string name="right_answer">Correcto!!</string>
+    <string name="wrong_answer">Oops…</string>
+    <string name="points">Obtiene $ puntos</string>
+    <string name="no_points">La respuesta correcta era: "$"</string>
+    <string name="completed_quiz">Cuestionario finalizado</string>
+    <string name="total_points">La puntuación final es de $</string>
     <!-- Card holders -->
     <string name="button_detail">Detalle</string>
     <string name="image_view">Foto</string>

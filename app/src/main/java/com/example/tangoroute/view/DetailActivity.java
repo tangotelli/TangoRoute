@@ -69,4 +69,10 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         intent.putExtra(MainActivity.WONDER_BUNDLE_CODE, this.wonder);
         startActivity(intent);
     }
+
+    public void showQuiz(View view) {
+        Intent intent = new Intent(this, QuizActivity.class);
+        intent.putExtra(MainActivity.WONDER_BUNDLE_CODE, this.wonder);
+        startActivity(intent);
+    }
 }

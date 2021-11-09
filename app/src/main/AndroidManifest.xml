@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TangoRoute">
         <activity
+            android:name=".view.QuizActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.AirportActivity"
             android:exported="true" />
         <activity

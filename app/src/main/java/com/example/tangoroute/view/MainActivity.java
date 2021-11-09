@@ -10,7 +10,6 @@ import android.widget.ListView;
 import com.example.tangoroute.R;
 import com.example.tangoroute.dialogs.HelpDialog;
 import com.example.tangoroute.models.Wonder;
-import com.example.tangoroute.persistence.QuestionRepository;
 import com.example.tangoroute.persistence.WonderRepository;
 import com.example.tangoroute.utils.QuestionGenerator;
 import com.example.tangoroute.utils.WonderGenerator;
@@ -20,7 +19,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private WonderRepository wonderRepository;
-    private QuestionRepository questionRepository;
     private List<Wonder> wonders;
     private ListView listView;
     private ListAdapter listAdapter;
@@ -32,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.wonderRepository = WonderRepository.getInstance(getApplication());
-        this.questionRepository = QuestionRepository.getInstance(getApplication());
         this.wonders = this.wonderRepository.findAll();
         listView = (ListView) findViewById(R.id.listMain);
         listAdapter = new WonderListAdapter(this.wonders, this.getResources(), this);

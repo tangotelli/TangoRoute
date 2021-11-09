@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.QuizActivity">
+
+    <TextView
+        android:id="@+id/tvWonderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/title_margin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/main_title"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvQuestionStatement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWonderTitle"
+        android:layout_marginTop="@dimen/component_margin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/main_title"
+        android:textSize="@dimen/quiz_text_size"/>
+
+    <RadioGroup
+        android:id="@+id/rbGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvQuestionStatement"
+        android:layout_marginTop="@dimen/component_margin"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbOption0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_title"
+            android:textSize="@dimen/quiz_text_size"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:id="@+id/rbOption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_title"
+            android:textSize="@dimen/quiz_text_size"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton
+            android:id="@+id/rbOption2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_title"
+            android:textSize="@dimen/quiz_text_size"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rbGroup"
+        android:layout_marginTop="@dimen/component_margin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/button_answer"
+        android:onClick="answer"/>
+
+</RelativeLayout>

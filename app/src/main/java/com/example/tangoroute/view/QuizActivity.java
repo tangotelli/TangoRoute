@@ -3,6 +3,7 @@ package com.example.tangoroute.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -12,7 +13,9 @@ import com.example.tangoroute.R;
 import com.example.tangoroute.dialogs.CompletedQuizDialog;
 import com.example.tangoroute.dialogs.CorrectDialog;
 import com.example.tangoroute.dialogs.IncorrectDialog;
+import com.example.tangoroute.dialogs.RecordGenerationDialog;
 import com.example.tangoroute.models.Question;
+import com.example.tangoroute.models.User;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.QuestionRepository;
 import com.google.android.material.snackbar.Snackbar;
@@ -117,6 +120,17 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void close() {
-        this.finish();
+        User user = User.getInstance();
+        if (user.getCompletedQuizes().get(this.wonder.getName()) == false) {
+            user.getCompletedQuizes().replace(this.wonder.getName(), false, true);
+            user.setPoints(user.getPoints() + this.getPoints());
+            if (user.hasCompletedQuizes()) {
+                new RecordGenerationDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+            } else {
+                this.finish();
+            }
+        } else {
+            this.finish();
+        }
     }
 }

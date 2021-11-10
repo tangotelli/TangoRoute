@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.tangoroute.R;
+import com.example.tangoroute.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -36,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     public void login(View view) {
         if (this.areValidCredentials()) {
             LoginActivity activity = this;
+            String email = this.etEmail.getText().toString();
             AuthCredential credential = EmailAuthProvider
                     .getCredential(this.etEmail.getText().toString(), this.etPassword.getText().toString());
             firebaseAuth.signInWithCredential(credential)
@@ -43,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                User user = User.getInstance();
+                                user.setEmail(email);
                                 startActivity(new Intent(activity, MainActivity.class));
                             } else {
                                 String message = getString(R.string.auth_failure);

@@ -9,7 +9,9 @@ import com.example.tangoroute.models.Situation;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.WonderRepository;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class WonderGenerator {
 
@@ -132,5 +134,17 @@ public class WonderGenerator {
             WonderRepository.getInstance(application).insert(wonder);
         }
         Log.i("TiW", "Success");
+    }
+
+    public static Map<String, Boolean> emptyHashMap() {
+        Map<String, Boolean> map = new HashMap<>();
+        map.put("Chichén Itza", false);
+        map.put("El Coliseo", false);
+        map.put("Cristo Redentor", false);
+        map.put("Gran Muralla China", false);
+        map.put("Machu Picchu", false);
+        map.put("Petra", false);
+        map.put("Taj Mahal", false);
+        return map;
     }
 }

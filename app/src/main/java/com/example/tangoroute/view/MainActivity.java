@@ -9,6 +9,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import com.example.tangoroute.R;
 import com.example.tangoroute.dialogs.HelpDialog;
+import com.example.tangoroute.models.User;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.WonderRepository;
 import com.example.tangoroute.utils.QuestionGenerator;

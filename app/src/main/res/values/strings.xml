@@ -24,6 +24,11 @@
     <string name="no_points">La respuesta correcta era: "$"</string>
     <string name="completed_quiz">Cuestionario finalizado</string>
     <string name="total_points">La puntuación final es de $</string>
+    <string name="congrats">¡Enhorabuena!</string>
+    <string name="all_quiz_completed">
+        Ha completado todos los cuestionarios relativos a las Siete Maravillas.
+        Se almacenará su puntuación en la nube.
+    </string>
     <!-- Card holders -->
     <string name="button_detail">Detalle</string>
     <string name="image_view">Foto</string>

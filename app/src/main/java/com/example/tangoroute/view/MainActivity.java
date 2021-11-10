@@ -9,11 +9,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import com.example.tangoroute.R;
 import com.example.tangoroute.dialogs.HelpDialog;
-import com.example.tangoroute.models.User;
+import com.example.tangoroute.dialogs.LoadDialog;
+import com.example.tangoroute.dialogs.SaveDialog;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.WonderRepository;
 import com.example.tangoroute.utils.QuestionGenerator;
 import com.example.tangoroute.utils.WonderGenerator;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -52,12 +54,44 @@ public class MainActivity extends AppCompatActivity {
                 listAdapter = new WonderListAdapter(this.wonders, this.getResources(), this);
                 listView.setAdapter(listAdapter);
                 return true;
+            case R.id.menuItemLoadUserData:
+                new LoadDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+                return true;
+            case R.id.menuItemSaveUserData:
+                new SaveDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+                return true;
             case R.id.menuItemHelp:
                 new HelpDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
                 return true;
             default:
                 return true;
         }
+    }
+
+    public void saveUserData() {
+        //TO-DO
+    }
+
+    public void saveCanceled() {
+        Snackbar.make(
+                findViewById(android.R.id.content),
+                R.string.save_canceled,
+                Snackbar.LENGTH_LONG
+        )
+                .show();
+    }
+
+    public void loadUserData() {
+        //TO-DO
+    }
+
+    public void loadCanceled() {
+        Snackbar.make(
+                findViewById(android.R.id.content),
+                R.string.load_canceled,
+                Snackbar.LENGTH_LONG
+        )
+                .show();
     }
 
 }

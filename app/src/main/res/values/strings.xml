@@ -37,9 +37,24 @@
     <string name="distance_to_wonder">Distancia a $:</string>
     <!-- Menu -->
     <string name="menu_help">Ayuda</string>
-    <string name="menu_database">Cargar datos en Room</string>
+    <string name="menu_database">Generar datos en Room</string>
+    <string name="menu_save">Guardar datos de usuario</string>
+    <string name="menu_load">Cargar datos de usuario</string>
     <!-- Dialog -->
     <string name="dialog_close">Cerrar</string>
+    <string name="dialog_yes">Sí</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_save">
+        ¿Desea guardar la puntuación actual ($)? Se guardarán también los cuestionarios que haya
+        completado hasta el momento.
+    </string>
+    <string name="dialog_load">
+        ¿Desea cargar la puntuación almacenada del usuario actual? Se cargará también el estado en
+        que estaban los cuestionarios en el momento del guardado.
+    </string>
+    <!-- Save/Load user data -->
+    <string name="save_canceled">Se canceló la operación de guardado.</string>
+    <string name="load_canceled">Se canceló la operación de carga de datos.</string>
     <!-- Help text -->
     <string name="help_title">¡Descubre la ruta por las Siete Maravillas del mundo moderno!</string>
     <string name="help_text">

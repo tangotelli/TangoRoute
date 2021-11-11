@@ -40,6 +40,7 @@
     <string name="menu_database">Generar datos en Room</string>
     <string name="menu_save">Guardar datos de usuario</string>
     <string name="menu_load">Cargar datos de usuario</string>
+    <string name="menu_see">Ver mi puntuación</string>
     <!-- Dialog -->
     <string name="dialog_close">Cerrar</string>
     <string name="dialog_yes">Sí</string>
@@ -53,7 +54,10 @@
         que estaban los cuestionarios en el momento del guardado.
     </string>
     <!-- Save/Load user data -->
+    <string name="save_completed">La puntuación del usuario fue guardada con éxito.</string>
     <string name="save_canceled">Se canceló la operación de guardado.</string>
+    <string name="load_empty">No se encontró ninguna puntuación guardada.</string>
+    <string name="load_completed">La puntuación del usuario fue cargada con éxito.</string>
     <string name="load_canceled">Se canceló la operación de carga de datos.</string>
     <!-- Help text -->
     <string name="help_title">¡Descubre la ruta por las Siete Maravillas del mundo moderno!</string>
@@ -67,5 +71,11 @@
         cercanos a cada una de las maravillas. Finalmente, mediante el botón "Cuestionario" podrás responder
         una serie de preguntas acerca de cada uno de estos monumentos. ¡Acierta todas las que puedas en el
         menor tiempo para ganar puntos y liderar la tabla de jugadores!
+    </string>
+    <!-- User score -->
+    <string name="user_score">Puntuación</string>
+    <string name="user_detail">
+        $ puntos.\n
+        Cuestionarios completados:\n
     </string>
 </resources>

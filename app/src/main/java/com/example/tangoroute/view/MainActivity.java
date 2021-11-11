@@ -3,6 +3,7 @@ package com.example.tangoroute.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListAdapter;
@@ -11,8 +12,11 @@ import com.example.tangoroute.R;
 import com.example.tangoroute.dialogs.HelpDialog;
 import com.example.tangoroute.dialogs.LoadDialog;
 import com.example.tangoroute.dialogs.SaveDialog;
+import com.example.tangoroute.dialogs.UserScoreDialog;
+import com.example.tangoroute.models.User;
 import com.example.tangoroute.models.Wonder;
 import com.example.tangoroute.persistence.WonderRepository;
+import com.example.tangoroute.utils.FileManager;
 import com.example.tangoroute.utils.QuestionGenerator;
 import com.example.tangoroute.utils.WonderGenerator;
 import com.google.android.material.snackbar.Snackbar;
@@ -60,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menuItemSaveUserData:
                 new SaveDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
                 return true;
+            case R.id.menuItemSeeUserData:
+                new UserScoreDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
+                return true;
             case R.id.menuItemHelp:
                 new HelpDialog().show(getSupportFragmentManager(), "ALERT_DIALOG");
                 return true;
@@ -69,7 +76,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void saveUserData() {
-        //TO-DO
+        String serialized = User.getInstance().serialize();
+        if (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+            return;
+        }
+        FileManager.writeFile(this, serialized, User.USER_DATA_FILE);
+        Snackbar.make(
+                findViewById(android.R.id.content),
+                R.string.save_completed,
+                Snackbar.LENGTH_LONG
+        )
+                .show();
     }
 
     public void saveCanceled() {
@@ -82,7 +99,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadUserData() {
-        //TO-DO
+        String serialized = FileManager.readFile(this, User.USER_DATA_FILE);
+        if (serialized.equals("")) {
+            Snackbar.make(
+                    findViewById(android.R.id.content),
+                    R.string.load_empty,
+                    Snackbar.LENGTH_LONG
+            )
+                    .show();
+        } else {
+            User.getInstance().deserialize(serialized);
+            Snackbar.make(
+                    findViewById(android.R.id.content),
+                    R.string.load_completed,
+                    Snackbar.LENGTH_LONG
+            )
+                    .show();
+        }
     }
 
     public void loadCanceled() {

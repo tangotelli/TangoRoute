@@ -12,7 +12,7 @@ public class User {
     private Map<String, Boolean> completedQuizes;
     private static User user;
 
-    private static final int NUMBER_OF_WONDERS = 7;
+    public static final String USER_DATA_FILE = "tangoRouteUserScore.txt";
 
     private User() {
         this.email = "";
@@ -60,5 +60,26 @@ public class User {
             }
         }
         return true;
+    }
+
+    public String serialize() {
+        String serialized = "";
+        Iterator iterator = this.completedQuizes.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Boolean> entry = (Map.Entry<String, Boolean>) iterator.next();
+            serialized += entry.getKey() + "-" + entry.getValue() + ";";
+        }
+        serialized += this.points;
+        return serialized;
+    }
+
+    public void deserialize(String serialized) {
+        String[] serializedParts = serialized.split(";");
+        this.points = Integer.parseInt(serializedParts[serializedParts.length - 1]
+                .replace("\n", "").replace("\r", ""));
+        for (int i = 0; i < serializedParts.length - 1; i++) {
+            String[] serializedKeyValue = serializedParts[i].split("-");
+            this.completedQuizes.replace(serializedKeyValue[0], Boolean.valueOf(serializedKeyValue[1]));
+        }
     }
 }

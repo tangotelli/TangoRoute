@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="@dimen/icon_top_margin"
         android:layout_marginTop="@dimen/component_margin"
-        android:src="@drawable/firebase_lockup_400"/>
+        android:src="@drawable/seven_wonders_header"/>
 
     <EditText
         android:id="@+id/etEmail"
